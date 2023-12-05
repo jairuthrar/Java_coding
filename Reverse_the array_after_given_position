@@ -1,0 +1,37 @@
+/* reverse an array after the given position*/
+import java.util.*;
+public class Solution {
+    public static void reverseArray(ArrayList<Integer> arr, int m) {
+        int n = arr.size();
+
+        for (int i = m + 1, j = n - 1; i < j; i++) {
+            int temp = arr.get(i);
+            arr.set(i, arr.get(j));
+            arr.set(j, temp);
+            j--;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int Testcase = sc.nextInt();
+
+        for (int t = 0; t < Testcase; t++) {
+            int N = sc.nextInt();
+            int M = sc.nextInt(); 
+            ArrayList<Integer> arr = new ArrayList<>();
+
+            for (int i = 0; i < N; i++) {
+                arr.add(sc.nextInt());
+            }
+
+            reverseArray(arr, M);
+
+           
+            for (int i = 0; i < N; i++) {
+                System.out.print(arr.get(i) + " ");
+            }
+            System.out.println();
+        } 
+    }
+}
