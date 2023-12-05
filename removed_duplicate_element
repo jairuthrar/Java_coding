@@ -1,0 +1,30 @@
+/*removed duplicate elements and store only unique elements*/
+import java.util.*;
+public class Removeduplicates {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+ ArrayList<Integer>a=new ArrayList<Integer>();
+ 
+ for(int i=0;i<n;i++)
+ {
+	 a.add(sc.nextInt());
+ }
+ 
+ for(int i=0;i<n;i++)
+ {
+	 for(int j=i+1;j<n;j++)
+	 {
+		 if(a.get(i)==a.get(j))
+		 {
+			 a.remove(j);
+			
+			 n--;
+		 }
+	 }
+ }
+ System.out.println(a.size());
+ System.out.print(a);
+	}
+}
