@@ -1,0 +1,48 @@
+/* find the duplicate element in the array*/
+import java.io.*;
+import java.util.* ;
+
+import java.util.ArrayList;
+
+public class Solution{
+    public static int findDuplicate(ArrayList<Integer> arr, int n){
+        
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(i!=j)
+                {
+             if(arr.get(i)==arr.get(j))
+             {
+                 return arr.get(i);
+             }
+            }
+        
+    }
+    }
+    return -1;
+    }
+
+    public static void main(String[]args)
+    {
+    Scanner sc=new Scanner(System.in);
+    int testcase=sc.nextInt();
+
+    for(int t=0;t<testcase;t++)
+    {
+        int size=sc.nextInt();
+        ArrayList <Integer> arr= new ArrayList <>();
+        
+
+        for(int i=0;i<size;i++)
+        {
+            arr.add(sc.nextInt());
+        }
+
+        System.out.println(findDuplicate(arr,size));
+    }
+
+    }
+
+}
